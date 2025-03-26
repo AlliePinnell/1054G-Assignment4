@@ -1,0 +1,981 @@
+  /* ▪ #072d67 (Blue) 
+  ▪ #5e35b1 (Purple) 
+  ▪ #f4f4f4 (White) 
+  ▪ #0e0e0e (Black) */
+
+  @font-face {
+    /* Define custom font for the title */
+    font-family: "Pelita Grande";
+    src: url("../fonts/PelitaGrande.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    /* Define custom font for the title */
+    font-family: "Pelita Grande Mobile";
+    src: url("../fonts/PelitaGrandeMobile.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  html {
+    font-family: "Pelita Grande", Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  header {
+    /* Use flexbox for layout */
+    display: flex;
+    /* Center items vertically */
+    align-items: center;
+    /* Fix the header at the top of the viewport */
+    position: fixed;
+    /* Full width of the viewport */
+    width: 100%;
+    /* Set the height of the header */
+    height: 175px;
+    /* Transparent background color with RGBA */
+    background-color: rgba(7, 45, 103, 0);
+    /* Ensure the header is on top of other elements */
+    z-index: 1;
+    /* Smooth transition for all properties */
+    transition: all .25s;
+  }
+
+  header div {
+    /* Automatic width based on content */
+    width: auto;
+    /* Full height of the header */
+    height: 100%;
+    /* Allow the div to grow and fill available space */
+    flex-grow: 1;
+  }
+
+  header div img {
+    /* Automatic width based on intrinsic dimensions */
+    width: auto;
+    /* Full height of the containing div */
+    height: 100%;
+  }
+
+  header nav menu{
+    display: flex; /* Sets flexbox layout for the menu items */
+    list-style: none; /* Removes bullet points from list items */
+    margin: 15px; /* Adds margin around the menu */
+    padding: 0; /* Removes default padding */
+  }
+
+  header nav menu li{
+    margin: 0 10px; /* Adds horizontal spacing between list items */
+  }
+  
+  header nav menu li a{
+    color: #f4f4f4; /* Sets text color to a light shade */
+    font-size: 2em; /* Increases font size for visibility */
+    text-decoration: none; /* Removes underline from links */
+    position: relative; /* Positions pseudo-elements relative to the link */
+    font-style: normal; /* Sets text to normal */
+  }
+
+  header nav menu li a:hover{
+    font-style: italic; /* Sets text to italic */
+  }
+
+  header nav menu li a::after {
+    font-style: normal; /* Sets text to normal */
+    content: "|"; /* Vertical bar separator */
+    margin-left: 2vh; /* Adds space between text and separator */
+  }
+
+  /* Stops the | from appearing after content */
+  header nav menu li:last-child a::after {
+    content: ""; /* Empty content removes the separator */
+  }
+
+  .scrolledHeader {
+    height: 75px; /* Reduces height when scrolled */
+    background-color: #072d67; /* Dark blue background color */
+    z-index: 2; /* Ensures header stays above other elements */
+  }
+
+  .titleSection{
+    height: 100vh; /* Sets height to full viewport */
+    background-image: url("../img/4.jpg"); /* Sets background image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    background-position: center; /* Centers the background image */
+    clip-path: polygon(100% 0, 100% 100%, 50% 90%, 0 100%, 0 0); /* Creates a polygon clipping effect */
+  }
+
+  .titleSection div{
+    background-color: rgba(14, 14, 14, 0.4); /* Adds a semi-transparent dark overlay */
+    width:100%; /* Full width of the parent */
+    height:100%; /* Full height of the parent */
+    display: flex; /* Flexbox layout for centering */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+  }
+
+  .titleSection div h1{
+    font-size: 10em; /* Large font size for prominence */
+    color: #f4f4f4; /* Light color for contrast */
+  }
+
+  #home{
+    text-align:center; /* Centers text inside the home section */
+  }
+
+  #home h2 {
+    font-size: 6em; /* Large font size for subheading */
+    color: #0e0e0e; /* Dark text color for readability */
+    text-align: center; /* Centers the subheading text */
+  }
+
+  #home p {
+    /* Set the font family for the paragraph inside the #home section */
+    font-family: "Pelita Grande Mobile", Arial, Helvetica, sans-serif;
+    /* Center the text */
+    text-align: center;
+    /* Add padding to the paragraph */
+    padding: 3%;
+    /* Set the font size */
+    font-size: 2.3em;
+    /* Set margins for left and right */
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .homeButtons {
+    /* Arrange buttons in a horizontal row */
+    display: flex;
+    flex-direction: row;
+  }
+
+  .homeButton1, .homeButton2 {
+    /* Set the height and width of both buttons */
+    height: 100%;
+    width: 100%;
+    /* Set background image and ensure it covers the area */
+    background-image: url("../img/10.jpg"); /* For homeButton1 */
+    background-size: cover;
+    background-position: center;
+  }
+
+  .homeButton2 {
+    /* Change background for homeButton2 */
+    background-image: url("../img/7.jpg");
+  }
+
+  .homeButton1 div, .homeButton2 div {
+    /* Add a semi-transparent overlay for both buttons */
+    background-color: rgba(0, 0, 0, .4);
+    /* Ensure the overlay covers the full button */
+    width: 100%;
+    height: 100%;
+    /* Center the content inside */
+    display: flex;
+    align-items: center;
+  }
+
+  .button, .button2 {
+    /* Set size for the buttons */
+    height: 500px;
+    width: 500px;
+    /* Position the buttons relative to each other */
+    position: relative;
+    /* Center the text or content inside the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Change cursor to pointer for interactive buttons */
+    cursor: pointer;
+    /* Add margin for spacing between buttons */
+    margin: 20px auto;
+    /* Set text color */
+    color: #f4f4f4;
+    /* Set large font size for the text inside */
+    font-size: 6em;
+    /* Remove underline from the links */
+    text-decoration: none;
+  }
+
+  .button:hover {
+    /* Add background image on hover */
+    background-image: url("../img/10.jpg");
+    /* Set background size */
+    background-size: 85vh;
+    /* Center the background */
+    background-position: center;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+
+  .button {
+    /* Remove the background image initially */
+    background-image: none;
+    /* Set background size */
+    background-size: 75vh;
+    /* Center the background */
+    background-position: center;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+  .button2:hover {
+    /* Add background image on hover for the second button */
+    background-image: url("../img/7.jpg");
+    /* Set background size */
+    background-size: 85vh;
+    /* Center the background */
+    background-position: center;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+  
+  .button2 {
+    /* Remove the background image initially for the second button */
+    background-image: none;
+    /* Set background size */
+    background-size: 75vh;
+    /* Center the background */
+    background-position: center;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+  
+  .button::after, .button::before, .button2::after, .button2::before {
+    /* Position the pseudo-elements absolutely */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Set content to be empty */
+    content: '';
+    /* Make the pseudo-elements block elements */
+    display: block;
+    /* Set color for the elements */
+    background-color: #f4f4f4;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+  
+  .button::before, .button2::before {
+    /* Create the vertical line on the left side */
+    width: 4px;
+    height: 500px;
+    /* Set shadow effect for the vertical line */
+    box-shadow: 498px 0 #f4f4f4;
+  }
+  
+  .button::after, .button2::after {
+    /* Create the horizontal line at the top */
+    width: 500px;
+    height: 4px;
+    /* Set shadow effect for the horizontal line */
+    box-shadow: 0 498px #f4f4f4;
+  }
+  
+  #about {
+    /* Center-align text inside the #about section */
+    text-align: center;
+    /* Set background color */
+    background-color: #072d67;
+    /* Add padding at the bottom */
+    padding-bottom: 130px;
+    /* Clip the section with a custom polygon shape */
+    clip-path: polygon(100% 70%, 100% 0%, 0 0, 0 70%, 50% 100%);
+    /* Set z-index to control stacking order */
+    z-index: 1;
+    /* Positioning context for absolute elements */
+    position: relative;
+  }
+  
+  #about h2 {
+    /* Set font size for the heading */
+    font-size: 6em;
+    /* Set text color */
+    color: #f4f4f4;
+    /* Center-align heading */
+    text-align: center;
+    /* Add padding at the top and bottom */
+    padding-top: 4%;
+    padding-bottom: 1%;
+  }
+  
+  #about p {
+    /* Center-align the paragraph text */
+    text-align: center;
+    /* Set font size */
+    font-size: 2.3em;
+    /* Add margins to the left and right */
+    margin-left: 10%;
+    margin-right: 10%;
+    /* Set text color */
+    color: #f4f4f4;
+  }
+  
+  .aboutSection {
+    /* Set background image for the about section */
+    background-image: url("../img/5.jpg");
+    /* Ensure the background image covers the section */
+    background-size: cover;
+    /* Fix the background so it doesn't scroll */
+    background-attachment: fixed;
+    /* Center the background image */
+    background-position: center;
+    /* Move the section up by 170px to overlap the previous section */
+    margin-top: -170px;
+    /* Set z-index for stacking context */
+    z-index: 0;
+    /* Positioning context for absolute elements */
+    position: relative;
+  }
+  
+  .aboutSection div {
+    /* Add semi-transparent overlay */
+    background-color: rgba(0, 0, 0, .4);
+    /* Make sure the overlay covers the entire section */
+    width: 100%;
+    height: 100%;
+    /* Flexbox to center content vertically */
+    display: flex;
+    align-items: center;
+    /* Arrange items in a column */
+    flex-direction: column;
+    /* Add padding at the top and bottom */
+    padding-top: 5%;
+    padding-bottom: 15%;
+  }
+  
+  .aboutSection div h1 {
+    /* Set the font size for the heading inside the about section */
+    font-size: 7em;
+    /* Set the text color */
+    color: #f4f4f4;
+    /* Center-align the heading text */
+    text-align: center;
+    /* Add margin at the top */
+    margin-top: 200px;
+    /* Add padding at the bottom */
+    padding-bottom: 5%;
+  }
+  
+  .buttons {
+    /* Arrange buttons in a row with a gap between them */
+    display: flex;
+    gap: 360px;
+    /* Add margin at the top */
+    margin-top: 10px;
+  }
+  
+  .smallButton, .smallButton2, .smallButton3 {
+    /* Set the height and width for the small buttons */
+    height: 100px;
+    width: 400px;
+    /* Position the buttons relative to their container */
+    position: relative;
+    /* Center the content inside the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Change the cursor to a pointer to indicate interactivity */
+    cursor: pointer;
+    /* Center the button within its parent */
+    margin-right: auto;
+    margin-left: auto;
+    /* Set the text color */
+    color: #f4f4f4;
+    /* Set the font size */
+    font-size: 2em;
+    /* Remove underline from the links */
+    text-decoration: none;
+  }
+  
+  .smallButton::after, .smallButton::before, .smallButton2::after, .smallButton2::before, .smallButton3::after, .smallButton3::before {
+    /* Position the pseudo-elements absolutely */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Set content to empty for the pseudo-elements */
+    content: '';
+    /* Make the pseudo-elements block-level elements */
+    display: block;
+    /* Set the background color for the pseudo-elements */
+    background-color: #f4f4f4;
+    /* Smooth transition effect */
+    transition: all .25s ease-in-out;
+  }
+  
+  .smallButton::before, .smallButton2::before, .smallButton3::before {
+    /* Create a vertical line on the left of the button */
+    width: 2px;
+    height: 100px;
+    /* Add shadow effect for the vertical line */
+    box-shadow: 398px 0 #f4f4f4;
+  }
+  
+  .smallButton::after, .smallButton2::after, .smallButton3::after {
+    /* Create a horizontal line at the top of the button */
+    width: 400px;
+    height: 2px;
+    /* Add shadow effect for the horizontal line */
+    box-shadow: 0 98px #f4f4f4;
+  }
+  
+  .smallButton {
+    /* Set initial transform state */
+    transform: scale(1) rotate(0deg);
+    /* Smooth transition effect for transform */
+    transition: transform .3s ease-in-out;
+  }
+  
+  .smallButton:hover {
+    /* Scale up and slightly rotate the button on hover */
+    transform: scale(1.3) rotate(5deg);
+    /* Smooth transition effect */
+    transition: transform .3s ease-in-out;
+    /* Change text color on hover */
+    color: #5e35b1;
+  }
+  
+  .smallButton:hover::before {
+    /* Change the width and color of the vertical line on hover */
+    width: 8px;
+    background-color: #5e35b1;
+    /* Adjust the shadow effect for the vertical line */
+    box-shadow: 398px 0 #5e35b1;
+  }
+  
+  .smallButton:hover::after {
+    /* Change the width, height, and color of the horizontal line on hover */
+    width: 406px;
+    height: 8px;
+    background-color: #5e35b1;
+    /* Adjust the shadow effect for the horizontal line */
+    box-shadow: 0 98px #5e35b1;
+  }
+  
+  .smallButton2 {
+    /* Smooth transition effect for the transform property */
+    transition: transform .3s ease-in-out;
+  }
+  
+  .smallButton2:hover {
+    /* Rotate the button in 3D on hover */
+    transform: rotate3d(3, 3, 0, 40deg);
+    /* Change text color on hover */
+    color: #072d67;
+  }
+  
+  .smallButton2:hover::before {
+    /* Change the width and color of the vertical line on hover */
+    width: 8px;
+    background-color: #072d67;
+    /* Adjust the shadow effect for the vertical line */
+    box-shadow: 398px 0 #072d67;
+  }
+  
+  .smallButton2:hover::after {
+    /* Change the width, height, and color of the horizontal line on hover */
+    width: 406px;
+    height: 8px;
+    background-color: #072d67;
+    /* Adjust the shadow effect for the horizontal line */
+    box-shadow: 0 98px #072d67;
+  }
+
+  .smallButton3:hover {
+    /* Smooth transition effect */
+    transition: transform .3s ease-in-out;
+    /* Change text color on hover */
+    color: #0e0e0e;
+  }
+  
+  .smallButton3:hover::before {
+    /* Change the width and color of the vertical line on hover */
+    width: 8px;
+    background-color: #0e0e0e;
+    /* Adjust the shadow effect for the vertical line */
+    box-shadow: 398px 0 #0e0e0e;
+  }
+  
+  .smallButton3:hover::after {
+    /* Change the width, height, and color of the horizontal line on hover */
+    height: 8px;
+    background-color: #0e0e0e;
+    /* Adjust the shadow effect for the horizontal line */
+    box-shadow: 0 98px #0e0e0e;
+  }
+  
+  .contactSection {
+    /* Set background color for the contact section */
+    background-color: #5e35b1;
+  }
+  
+  form {
+    /* Add padding around the form */
+    padding: 5%;
+  }
+  
+  input, textarea {
+    /* Add padding around the input and textarea fields */
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* Set the font family for the input and textarea */
+    font-family: "Pelita Grande", Arial, Helvetica, sans-serif;
+    /* Set the font size */
+    font-size: 3em;
+  }
+  
+  form .section1 {
+    /* Set the display to flex to align items in a row */
+    display: flex;
+    flex-direction: row;
+    /* Vertically align items to the center */
+    align-items: center;
+    /* Add space between items */
+    gap: 20px;
+    /* Add margin at the bottom */
+    margin-bottom: 20px;
+  }
+  
+  form .section2 {
+    /* Set the display to flex to align items in a column */
+    display: flex;
+    flex-direction: column;
+    /* Center-align the items horizontally */
+    align-items: center;
+    /* Add space between items */
+    gap: 20px;
+    /* Add margin at the bottom */
+    margin-bottom: 20px;
+  }
+  
+  form .section1 input {
+    /* Set the width of the input in section1 to 50% */
+    width: 50%;
+  }
+  
+  form .section2 input, form .section2 textarea {
+    /* Set the width of input and textarea in section2 to 98% */
+    width: 98%;
+  }
+  
+  footer {
+    /* Center-align the footer content */
+    text-align: center;
+  }
+  
+  footer img {
+    /* Set the image size in the footer */
+    width: 40%;
+    height: 40%;
+  }
+  
+  footer h1 {
+    /* Set the font size of the heading in the footer */
+    font-size: 3em;
+    /* Add padding at the bottom */
+    padding-bottom: 110px;
+  }
+  
+  .mobile-title {
+    /* Hide the mobile title by default */
+    display: none;
+  }
+  
+  .desktop-title {
+    /* Display the desktop title */
+    display: block;
+  }
+  
+  .arrow {
+    /* Set display to flex for the arrow container */
+    display: flex;
+  }
+  
+  .titleSection .arrow1, .titleSection .arrow1:before { 
+    /* Position the first arrow absolutely */
+    position: absolute; 
+    left: 48%; 
+    /* Set the background color of the first arrow to transparent */
+    background-color: rgba(0,0,0,0);
+  } 
+  
+  .titleSection .arrow2, .titleSection .arrow2:before { 
+    /* Position the second arrow absolutely */
+    position: absolute; 
+    left: 47%; 
+    /* Set the background color of the second arrow to transparent */
+    background-color: rgba(0,0,0,0);
+  } 
+  
+  .titleSection .arrow1 {
+    /* Set the size of the first arrow */
+    width: 75px; 
+    height: 70px;
+    /* Position the first arrow near the bottom of the section */
+    top: 75%; 
+    margin: -10px 0 0 -10px; 
+    /* Style the first arrow with no left, top, or right borders */
+    border-left: none; 
+    border-top: none; 
+    border-right: none; 
+    /* Set the bottom border with a solid white line */
+    border-bottom: 4px #f4f4f4 solid; 
+    animation: pulsing1 2s infinite;
+  }
+  
+  .titleSection .arrow2 {
+    /* Set the size of the second arrow */
+    width: 70px; 
+    height: 77px;
+    /* Position the second arrow near the bottom of the section */
+    top: 75%; 
+    margin: -10px 0 0 -10px; 
+    /* Style the second arrow with no left, top, or bottom borders */
+    border-left: none; 
+    border-top: none; 
+    /* Set the right border with a solid white line */
+    border-right: 4px #f4f4f4 solid; 
+    border-bottom: none; 
+    animation: pulsing2 2s infinite;
+  }
+
+@keyframes pulsing1 {
+  /* At the start of the animation */
+  0% {
+    transform: scale(1) rotate(54deg); /* Start with normal size and rotate by 54 degrees */
+  }
+  /* At the midpoint of the animation */
+  50% {
+    transform: scale(1.6) rotate(48deg); /* Increase size to 1.6x and rotate slightly less to 48 degrees */
+  }
+  /* At the end of the animation */
+  100% {
+    transform: scale(1) rotate(54deg); /* Return to the original size and rotation */
+  }
+}
+
+@keyframes pulsing2 {
+  /* At the start of the animation */
+  0% {
+    transform: scale(1) rotate(32deg); /* Start with normal size and rotate by 32 degrees */
+  }
+  /* At the midpoint of the animation */
+  50% {
+    transform: scale(1.6) rotate(34deg); /* Increase size to 1.6x and rotate slightly more to 34 degrees */
+  }
+  /* At the end of the animation */
+  100% {
+    transform: scale(1) rotate(32deg); /* Return to the original size and rotation */
+  }
+}
+  
+  input::placeholder, textarea::placeholder {
+    /* Set the color of the placeholder text */
+    color: #0e0e0e;
+    /* Set the font size of the placeholder text */
+    font: 1em;
+  }
+  
+  .mobile-menu {
+    /* Hide the mobile menu by default */
+    display: none;
+  }
+  
+  .desktop-menu {
+    /* Display the desktop menu */
+    display: flex;
+  }  
+
+/* Mobile Styles */
+@media only screen and (max-width: 1268px) {
+  
+  header{
+    /* Reduce header height for mobile */
+    height: 54px;
+  }
+
+  header div img {
+    /* Increase image height to 133% for mobile */
+    height: 133%;
+  }
+
+  .scrolledHeader{
+    /* Reduce height of the scrolled header */
+    height: 44px;
+  }
+
+  .scrolledHeader div img {
+    /* Set image height to 100% in scrolled header */
+    height: 100%;
+  }
+
+  .desktop-menu {
+    /* Hide the desktop menu on mobile */
+    display: none;
+  }
+
+  .mobile-menu {
+    /* Show mobile menu as a flex container */
+    display: flex;
+    color: #f4f4f4;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+  }
+
+  .mobile-menu button{
+    /* Style the button in the mobile menu */
+    color: #f4f4f4;
+    background-color: transparent;
+    border: 0;
+    font-size: 2em;
+  }
+
+  .mobile-content {
+    /* Hide the mobile content by default */
+    display: none;
+    position: fixed;
+    margin-left: -50px;
+    z-index: 1;
+  }
+
+  .mobile-content a {
+    /* Style the mobile content links */
+    background-color: #072d67;
+    color: #f4f4f4;
+    padding: 18px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+
+  .mobile-content a:hover {
+    /* Change background color on hover */
+    background-color: #5e35b1;
+  }
+
+  .mobile-menu:hover .mobile-content {
+    /* Show mobile content when hovering over the mobile menu */
+    display: block;
+  }
+
+  .mobile-menu:hover button {
+    /* Change button color on hover */
+    color: #5e35b1;
+  }
+
+  .mobile-title {
+    /* Show mobile title */
+    display: block;
+  }
+
+  .desktop-title {
+    /* Hide desktop title */
+    display: none;
+  }
+
+  .titleSection {
+    clip-path: polygon(100% 0, 100% 100%, 50% 95%, 0 100%, 0 0);
+  }
+
+  .titleSection .arrow1{
+    /* Adjust arrow size and position for mobile */
+    width: 45px; 
+    height: 40px;
+    border-bottom: 8px #f4f4f4 solid; 
+    border-right: 8px #f4f4f4 solid; 
+    transform: rotate(42deg); 
+  }
+
+  .titleSection .arrow2{
+    /* Remove right border from second arrow */
+    border-right: none;
+  }
+
+  .titleSection div h1 {
+    /* Reduce font size of title text for mobile */
+    font-size: 230%;
+  }
+
+  .buttons {
+    /* Stack buttons vertically on mobile */
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .homeButtons{
+    /* Stack home buttons vertically on mobile */
+    flex-direction: column;
+  }
+
+  #home h2, #about h2, .aboutSection div h1{
+    /* Reduce font size for mobile headings */
+    font-size: 3em;
+  }
+
+  #home p, #about p{
+    /* Reduce font size for paragraph text */
+    font-size: 0.8em;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #about {
+    clip-path: polygon(100% 70%, 100% 0%, 0 0, 0 70%, 50% 85%);
+  }
+
+  .aboutSection {
+    margin-top: -230px;
+  }
+
+  #about p {
+    /* Apply a specific font family for the about paragraph */
+    font-family: "Pelita Grande Mobile", Arial, Helvetica, sans-serif;
+  }
+
+  .smallButton, .smallButton2, .smallButton3 {
+    /* Adjust button sizes for mobile */
+    height: 50px;
+    width: 50vw;
+    font-size: 1em;
+    font-family: "Pelita Grande Mobile", Arial, Helvetica, sans-serif;
+  }
+
+  .smallButton::before, .smallButton2::before, .smallButton3::before{
+    /* Adjust the size and position of the button borders */
+    width: 4px;
+    height: 54px;
+    box-shadow: 50vw 0 #f4f4f4;
+  }
+
+  .smallButton::after, .smallButton2::after, .smallButton3::after{
+    /* Adjust the size and position of the button borders */
+    width: 50vw;
+    height: 4px;
+    box-shadow: 0 50px #f4f4f4;
+  }
+
+  .smallButton:hover::before {
+    /* Change color on hover for the first button */
+    box-shadow: 50vw 0 #5e35b1;
+  }
+
+  .smallButton:hover::after {
+    /* Change color and size on hover for the first button */
+    width: 51vw;
+    box-shadow: 0 50px #5e35b1;
+  }
+
+  .smallButton2:hover {
+    /* Add rotation on hover for the second button */
+    transform: rotate3d(3, 3, 0, 40deg);
+  }
+
+  .smallButton2:hover::before {
+    /* Change color on hover for the second button */
+    box-shadow: 50vw 0 #072d67;
+  }
+
+  .smallButton2:hover::after {
+    /* Change color and size on hover for the second button */
+    width: 51vw;
+    box-shadow: 0 50px #072d67;
+  }
+
+  .smallButton3:hover::before {
+    /* Change color on hover for the third button */
+    box-shadow: 50vw 0 #0e0e0e;
+  }
+
+  .smallButton3:hover::after {
+    /* Change color and size on hover for the third button */
+    width: 51vw;
+    box-shadow: 0 50px #0e0e0e;
+  }
+
+  form .section1 {
+    /* Stack form section1 inputs vertically */
+    flex-direction: column;
+  }
+
+  form .section1 input {
+    /* Make input fields take up 98% width on mobile */
+    width: 98%;
+  }
+
+  input, textarea{
+    /* Reduce font size for input and textarea fields */
+    font-size: 1em;
+  }
+
+  input::placeholder, textarea::placeholder {
+    /* Hide the placeholder text */
+    opacity: 0;
+  }
+
+  .button, .button2 {
+    /* Adjust button sizes for mobile */
+    width: 75%;
+    height: 200px;
+    position: relative;
+    font-size: 50px;
+    background-size: 155vh;
+  }
+
+  .button:hover, .button2:hover{
+    /* Increase background size on hover */
+    background-size: 170vh;
+  }
+
+  .button::before, .button2::before {
+    /* Adjust button border styles for mobile */
+    width: 2px;
+    height: 4.01em;
+    box-shadow: 75vw 0 #f4f4f4;
+  }
+
+  .button::after, .button2::after {
+    /* Adjust button shadow sizes for mobile */
+    height: 2px;
+    width: 75vw;
+    box-shadow: 0 197px #f4f4f4;
+  }
+
+  footer h1{
+    /* Reduce footer heading font size for mobile */
+    font-size: 2em;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    font-family: "Pelita Grande Mobile", Arial, Helvetica, sans-serif;
+  }
+
+  footer img {
+    /* Adjust image size in the footer for mobile */
+    width: 97%;
+  }
+
+  footer h1 {
+    /* Reduce font size for footer heading on mobile */
+    font-size: 1em;
+    padding-top: 0;
+  }
+
+  @keyframes pulsing1 {
+    0% {
+      transform: scale(0.5) rotate(42deg);
+    }
+    50% {
+      transform: scale(1) rotate(42deg);
+    }
+    100% {
+      transform: scale(0.5) rotate(42deg);
+    }
+  }
+}
